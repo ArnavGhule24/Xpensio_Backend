@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from firebase_admin import firestore
 import firebase
-from model import SmsList
+from model import Sms
 from category import cat
 
 
@@ -16,9 +16,9 @@ async def categories(email:str):
     return cat(email)
 
 @app.post('/postsms')
-async def postsms(email:str,sms:SmsList):
+async def postsms(email:str,sms:list[Sms]):
     i=1
-    for item in sms.smsList:
+    for item in sms:
         data = {
             "merchant":item.merchant,
             "amount":item.amount,
