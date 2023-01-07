@@ -6,3 +6,4 @@ numpy
 statsmodels
 datetime
 uvicorn
+python_jwt
