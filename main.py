@@ -27,3 +27,15 @@ async def postsms(email:str,sms:list[Sms]):
         db.collection(email).document("Message List").collection("List").document('List'+str(i)).add(data)
         i=i+1
 
+@app.post('/postsms/monthly')
+async def monthly_sms(email:str,sms:list[Sms]):
+    i=1
+    for item in sms:
+        data = {
+            "merchant":item.merchant,
+            "amount":item.amount,
+            "date":item.date
+        }
+        db.collection(email).document("Message List").collection("Monthly List").document('List'+str(i)).set(data)
+        i=i+1
+

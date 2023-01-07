@@ -5,5 +5,3 @@ class Sms(BaseModel):
     amount:str
     date:str
 
-class SmsList(BaseModel):
-    smsList:list[Sms]
