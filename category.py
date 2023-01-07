@@ -13,7 +13,7 @@ def cat(email:str):
     sumGrocery=0
     sumOther=0
     amount=0
-    smsData=db.collection(email).document("Message List").collection("List").get()
+    smsData=db.collection(email).document("Message List").collection("Monthly List").get()
     for data in smsData:
         sms=data.to_dict()
         amount=float(sms.get('amount'))
