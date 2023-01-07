@@ -24,6 +24,6 @@ async def postsms(email:str,sms:list[Sms]):
             "amount":item.amount,
             "date":item.date
         }
-        db.collection(email).document("Message List").collection("List").document('List'+str(i)).set(data)
+        db.collection(email).document("Message List").collection("List").document('List'+str(i)).add(data)
         i=i+1
 
