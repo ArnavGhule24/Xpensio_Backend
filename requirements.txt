@@ -1,0 +1,8 @@
+fastapi
+firebase_admin
+firebase
+pandas
+numpy
+statsmodels
+datetime
+uvicorn
